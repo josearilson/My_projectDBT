@@ -1,7 +1,7 @@
 /* CAMADA SILVER: TRATAMENTO DE CLIENTES
    Objetivo: Limpar prefixos, remover títulos de nomes e padronizar localizações.
 */
-
+{{ config(materialized='table') }}
 -- 1. Criação de uma CTE para isolar a leitura da tabela Bronze (Raw)
 with raw_clientes as (
     -- IMPORTANTE: Verifique se os nomes 'ecom_raw' e 'clientes' estão entre aspas simples
@@ -39,4 +39,3 @@ where
     and id_cliente != 'id_cliente'
 
 
-    

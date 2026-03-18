@@ -1,7 +1,7 @@
 /* CAMADA SILVER: TRATAMENTO DE VENDAS
    Objetivo: Padronizar chaves estrangeiras, converter tipos de dados e preparar para JOINs.
 */
-
+{{ config(materialized='table') }}
 -- 1. Criação de uma CTE para isolar a leitura da tabela Bronze de vendas
 with raw_vendas as (
     -- O dbt aponta para a tabela definida no seu arquivo sources.yml

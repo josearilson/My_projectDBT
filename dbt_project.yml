@@ -31,8 +31,4 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   dbtproject: # Nome do seu projeto (2 espaços)
-    +catalog: workspace # (4 espaços)
-    staging: # (4 espaços)
-      +materialized: table # (6 espaços)
-    gold: # (4 espaços)
-      +materialized: table # (6 espaços)
+    +catalog: workspace # (4 espaços) 

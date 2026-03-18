@@ -1,7 +1,7 @@
 /* CAMADA SILVER: TRATAMENTO DE PRODUTOS
    Objetivo: Padronizar IDs, converter preços para decimal e limpar metadados de produtos.
 */
-
+{{ config(materialized='table') }}
 -- 1. Criação de uma CTE para isolar a leitura da tabela Bronze de produtos
 with raw_produtos as (
     -- O dbt aponta para a tabela definida no seu arquivo sources.yml
