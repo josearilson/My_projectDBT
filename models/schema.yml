@@ -1,8 +1,0 @@
-version: 2
-
-models:
-  - name: stg_clientes
-    description: "Camada Silver: Clientes do e-commerce com nomes limpos e estados padronizados."
-    columns:
-      - name: id_cliente 
-      - name: estado_codigo

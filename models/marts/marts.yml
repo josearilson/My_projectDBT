@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: "Tabela final de clientes (Camada Gold)"
+    columns:
+      - name: id_cliente
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_produtos
+    description: "Tabela final de produtos (Camada Gold)"
+    columns:
+      - name: id_produto
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_vendas
+    description: "Tabela final de vendas (Camada Gold)"
+    columns:
+      - name: id_venda
+        tests:
+          - unique
+          - not_null

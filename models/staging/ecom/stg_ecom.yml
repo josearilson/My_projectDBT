@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_ecom_clientes
+    description: "Limpeza inicial dos dados de clientes da fonte ecom"
+    columns:
+      - name: id_cliente
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_ecom_produtos
+    description: "Limpeza inicial, padronização de IDs e conversão de preços da fonte ecom"
+    columns:
+      - name: id_produto
+        tests:
+          - unique
+          - not_null
+      - name: preco_valor
+        description: "Preço convertido para decimal após limpeza de caracteres especiais"
+        tests:
+          - not_null
+
+  - name: stg_ecom_vendas
+    description: "Limpeza inicial, padronização de chaves e cálculo de total da fonte ecom"
+    columns:
+      - name: id_venda
+        tests:
+          - unique
+          - not_null
+      - name: id_cliente
+        description: "Chave estrangeira de cliente padronizada"
+        tests:
+          - not_null
+      - name: id_produto
+        description: "Chave estrangeira de produto padronizada"
+        tests:
+          - not_null
+      - name: valor_total_venda
+        description: "Métrica calculada (quantidade * preco_unitario)"
+        tests:
+          - not_null
